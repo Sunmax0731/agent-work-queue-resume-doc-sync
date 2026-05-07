@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "agent-queue-1",
+      "title": "エージェント作業キュー・再開ノート・文書同期 サンプル 1",
+      "taskId": "queue-001",
+      "queueStatus": "ready",
+      "resumeNote": "次は検証ログを確認する",
+      "sourceDocument": "docs/implementation-plan.md"
+    },
+    {
+      "id": "agent-queue-missing-required",
+      "title": "必須項目不足サンプル",
+      "queueStatus": "ready",
+      "resumeNote": "次は検証ログを確認する",
+      "sourceDocument": "docs/implementation-plan.md"
+    }
+  ]
+}
