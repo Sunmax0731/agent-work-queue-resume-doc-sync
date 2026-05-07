@@ -1,0 +1,18 @@
+{
+  "name": "agent-work-queue-resume-doc-sync",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "エージェント作業キュー、再開ノート、同期対象ドキュメントの状態を確認する。",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "npm test",
+    "start": "node src/cli.mjs samples/sample-input.json dist/run"
+  },
+  "keywords": [
+    "projectmanagement",
+    "agent-queue",
+    "mvp"
+  ],
+  "license": "MIT"
+}
