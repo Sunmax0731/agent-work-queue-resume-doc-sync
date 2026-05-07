@@ -191,7 +191,7 @@
           "description": "docs ZIPが生成済みである",
           "kind": "zip",
           "pass": true,
-          "detail": "agent-work-queue-resume-doc-sync-docs.zip 10026 bytes"
+          "detail": "agent-work-queue-resume-doc-sync-docs.zip exists and exceeds minimum size"
         }
       ]
     },
