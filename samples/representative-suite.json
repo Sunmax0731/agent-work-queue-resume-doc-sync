@@ -1,0 +1,120 @@
+{
+  "product": "agent-work-queue-resume-doc-sync",
+  "title": "エージェント作業キュー・再開ドキュメント同期",
+  "benchmarkRepos": [
+    "Sunmax0731/movie-telop-transcriber",
+    "Sunmax0731/codex-remote-android"
+  ],
+  "requiredFields": [
+    "taskId",
+    "queueStatus",
+    "resumeNote",
+    "sourceDocument"
+  ],
+  "scenarios": [
+    {
+      "id": "happy-path",
+      "purpose": "作業キュー、再開メモ、参照ドキュメント同期の正常入力を確認する",
+      "input": {
+        "items": [
+          {
+            "id": "agent-work-queue-resume-doc-sync-happy",
+            "title": "エージェント作業キュー・再開ドキュメント同期 happy",
+            "taskId": "queue-001",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "passed",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "missing-required",
+      "purpose": "必須項目不足をerrorとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "agent-work-queue-resume-doc-sync-missing-required",
+            "title": "エージェント作業キュー・再開ドキュメント同期 missing-required",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "blocked-status",
+      "purpose": "blocked状態をwarningとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "agent-work-queue-resume-doc-sync-blocked",
+            "title": "エージェント作業キュー・再開ドキュメント同期 blocked",
+            "taskId": "queue-001",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "warning",
+        "errors": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "id": "mixed-batch",
+      "purpose": "正常、必須不足、警告を同一バッチで集計する",
+      "input": {
+        "items": [
+          {
+            "id": "agent-work-queue-resume-doc-sync-happy",
+            "title": "エージェント作業キュー・再開ドキュメント同期 happy",
+            "taskId": "queue-001",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "ready"
+          },
+          {
+            "id": "agent-work-queue-resume-doc-sync-missing-required",
+            "title": "エージェント作業キュー・再開ドキュメント同期 missing-required",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "ready"
+          },
+          {
+            "id": "agent-work-queue-resume-doc-sync-blocked",
+            "title": "エージェント作業キュー・再開ドキュメント同期 blocked",
+            "taskId": "queue-001",
+            "queueStatus": "ready",
+            "resumeNote": "次回は検証ログから再開する",
+            "sourceDocument": "docs/implementation-plan.md",
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 1
+      }
+    }
+  ]
+}
