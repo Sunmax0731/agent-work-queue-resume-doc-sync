@@ -4,11 +4,12 @@ import { analyzeItems, renderMarkdownReport } from '../src/core.mjs';
 
 test('valid sample passes required field checks', () => {
   const report = analyzeItems({ items: [{
-  "id": "agent-queue-1",
-  "title": "エージェント作業キュー・再開ノート・文書同期 サンプル 1",
+  "id": "agent-work-queue-resume-doc-sync-1",
+  "title": "エージェント作業キュー・再開ドキュメント同期 サンプル1",
+  "status": "ready",
   "taskId": "queue-001",
   "queueStatus": "ready",
-  "resumeNote": "次は検証ログを確認する",
+  "resumeNote": "次回は検証ログから再開する",
   "sourceDocument": "docs/implementation-plan.md"
 }] });
   assert.equal(report.summary.result, 'passed');
@@ -17,10 +18,11 @@ test('valid sample passes required field checks', () => {
 
 test('missing required field is reported', () => {
   const report = analyzeItems({ items: [{
-  "id": "agent-queue-missing-required",
+  "id": "agent-work-queue-resume-doc-sync-missing-required",
   "title": "必須項目不足サンプル",
+  "status": "ready",
   "queueStatus": "ready",
-  "resumeNote": "次は検証ログを確認する",
+  "resumeNote": "次回は検証ログから再開する",
   "sourceDocument": "docs/implementation-plan.md"
 }] });
   assert.equal(report.summary.result, 'failed');

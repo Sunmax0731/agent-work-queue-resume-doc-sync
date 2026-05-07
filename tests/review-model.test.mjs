@@ -8,11 +8,11 @@ test('review model exposes status cards and next actions', () => {
   "title": "必須項目不足サンプル",
   "status": "ready",
   "queueStatus": "ready",
-  "resumeNote": "次は検証ログを確認する",
+  "resumeNote": "次回は検証ログから再開する",
   "sourceDocument": "docs/implementation-plan.md"
 }] });
   const model = buildReviewModel(report);
-  assert.equal(model.statusLabel, '要修正');
+  assert.equal(model.statusLabel, '修正が必要');
   assert.ok(model.completionRate < 100);
   assert.ok(model.cards.length >= 4);
   assert.match(renderHtmlReport(report), /Next Actions/);
