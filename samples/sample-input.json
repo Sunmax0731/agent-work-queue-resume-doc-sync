@@ -1,16 +1,18 @@
 {
   "items": [
     {
-      "id": "agent-queue-1",
+      "id": "agent-work-queue-resume-doc-sync-1",
       "title": "エージェント作業キュー・再開ノート・文書同期 サンプル 1",
+      "status": "ready",
       "taskId": "queue-001",
       "queueStatus": "ready",
       "resumeNote": "次は検証ログを確認する",
       "sourceDocument": "docs/implementation-plan.md"
     },
     {
-      "id": "agent-queue-missing-required",
+      "id": "agent-work-queue-resume-doc-sync-missing-required",
       "title": "必須項目不足サンプル",
+      "status": "ready",
       "queueStatus": "ready",
       "resumeNote": "次は検証ログを確認する",
       "sourceDocument": "docs/implementation-plan.md"
