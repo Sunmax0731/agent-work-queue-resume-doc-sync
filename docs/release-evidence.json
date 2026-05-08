@@ -1,0 +1,32 @@
+{
+  "product": "agent-work-queue-resume-doc-sync",
+  "repository": "Sunmax0731/agent-work-queue-resume-doc-sync",
+  "githubUrl": "https://github.com/Sunmax0731/agent-work-queue-resume-doc-sync",
+  "tag": "v0.1.0-alpha.1",
+  "releaseUrl": "https://github.com/Sunmax0731/agent-work-queue-resume-doc-sync/releases/tag/v0.1.0-alpha.1",
+  "prerelease": true,
+  "latest": false,
+  "assetCount": 3,
+  "assets": [
+    "agent-work-queue-resume-doc-sync-docs.zip",
+    "manual-test.md",
+    "strict-manual-test-addendum.md"
+  ],
+  "platformRuntimeGate": "dist/platform-runtime-gate-result.json",
+  "platformType": "cli-release-tool",
+  "manualTest": "not-run-by-codex",
+  "qcdsEvaluation": {
+    "Quality": "S-",
+    "Cost": "S-",
+    "Delivery": "S-",
+    "Satisfaction": "S-",
+    "capReason": "manual-test-not-run-by-codex"
+  },
+  "github": {
+    "repo": "Sunmax0731/agent-work-queue-resume-doc-sync",
+    "url": "https://github.com/Sunmax0731/agent-work-queue-resume-doc-sync",
+    "releaseUrl": "https://github.com/Sunmax0731/agent-work-queue-resume-doc-sync/releases/tag/v0.1.0-alpha.1",
+    "prerelease": true,
+    "latest": false
+  }
+}
